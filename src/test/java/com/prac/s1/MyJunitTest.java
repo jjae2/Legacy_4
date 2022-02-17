@@ -12,9 +12,5 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 public abstract class MyJunitTest {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }

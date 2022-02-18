@@ -12,7 +12,7 @@ public class NoticeService {
 	private NoticeDAO noticeDAO;
 
 	public List<NoticeDTO> list() throws Exception{
-		List<NoticeDTO> ar = noticeDAO.list();
+		List<NoticeDTO>ar = noticeDAO.list();
 		return ar;
 	}
 	public NoticeDTO detail(NoticeDTO noticeDTO)throws Exception{

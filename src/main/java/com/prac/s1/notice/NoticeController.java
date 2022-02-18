@@ -10,22 +10,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/notice/*")
+@RequestMapping(value = "/notice/*")
 public class NoticeController {
-@Autowired
-private NoticeService noticeService;
 
-@RequestMapping(value="list", method=RequestMethod.GET)
-public ModelAndView list(ModelAndView mv)throws Exception{
-	List<NoticeDTO> ar = noticeService.list();
-	mv.addObject("list",ar);
-	mv.setViewName("bankbook/list");
-	return mv;
-}
-@RequestMapping(value = "detail", method=RequestMethod.GET)
-public void detail(NoticeDTO noticeDTO,Model model)throws Exception{
-	noticeDTO=noticeService.detail(noticeDTO);
-	model.addAttribute("dto",noticeDTO);
-}
+	@Autowired
+	private NoticeService noticeService;
 
+	@RequestMapping(value = "list", method = RequestMethod.GET)
+	public ModelAndView list(ModelAndView mv) throws Exception {
+		List<NoticeDTO> ar = noticeService.list();
+		mv.addObject("list", ar);
+		mv.setViewName("notice/list");
+		return mv;
+	}
+
+	@RequestMapping(value = "detail", method = RequestMethod.GET)
+	public void detail(NoticeDTO noticeDTO, Model model) throws Exception {
+		noticeDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", noticeDTO);
+	}
+
+	@RequestMapping(value = "add", method = RequestMethod.GET)
+	public void add() throws Exception {
+	}
+
+	@RequestMapping(value = "add", method = RequestMethod.POST)
+	public String add(NoticeDTO noticeDTO) throws Exception {
+		int result = noticeService.add(noticeDTO);
+		return "redirect:./list";
+	}
 }

@@ -24,15 +24,16 @@ public class NoticeTest extends MyJunitTest {
 		List<NoticeDTO> ar =noticeDAO.list();
 		assertNotEquals(0, ar.size());
 	}
-	//@Test
+	@Test
 	public void addTest() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
-		noticeDTO.setTitle("T3");
-		noticeDTO.setContents("C3");
-		noticeDTO.setWriter("W3");
-		noticeDTO.setHit(3L);
+		for(int i=0;i<7;i++) {
+		noticeDTO.setTitle("TITLE"+i);
+		noticeDTO.setContents("CONTENTS"+i);
+		noticeDTO.setWriter("WRITER"+i);
+		noticeDTO.setHit(4L);
 		int result = noticeDAO.add(noticeDTO);
-		assertEquals(1, result);
+		}
 	}
 
 }

@@ -24,7 +24,7 @@ public class NoticeTest extends MyJunitTest {
 		List<NoticeDTO> ar =noticeDAO.list();
 		assertNotEquals(0, ar.size());
 	}
-	@Test
+	//@Test
 	public void addTest() throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO();
 		noticeDTO.setTitle("T3");

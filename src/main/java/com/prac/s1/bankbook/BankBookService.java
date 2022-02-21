@@ -9,23 +9,22 @@ import org.springframework.stereotype.Service;
 public class BankBookService {
 	@Autowired
 	private BankBookDAO bankBookDAO;
-	//메서드는 dao와 거의 동일
-	
-	//add(insert)
-	public int add(BankBookDTO bankBookDTO)throws Exception{
+	// 메서드는 dao와 거의 동일
+	// add(insert)
+	public int add(BankBookDTO bankBookDTO) throws Exception {
 		return bankBookDAO.add(bankBookDTO);
 	}
-	
-	//detail
-	public BankBookDTO detail(BankBookDTO bankBookDTO)throws Exception{
-	return bankBookDAO.detail(bankBookDTO);
+	// detail
+	public BankBookDTO detail(BankBookDTO bankBookDTO) throws Exception {
+		return bankBookDAO.detail(bankBookDTO);
 	}
-	//list
-	public List<BankBookDTO> list() throws Exception{
-		//dao 메서드 호출 전 전처리 작업
-		//호출 후 후처리 작업
-		List<BankBookDTO>ar= bankBookDAO.list();
-		
+	// list
+	public List<BankBookDTO> list() throws Exception {
+		List<BankBookDTO> ar = bankBookDAO.list();
+
 		return ar;
+	}
+	public int delete(BankBookDTO bankbookDTO) throws Exception{
+		return bankBookDAO.delete(bankbookDTO);
 	}
 }

@@ -21,13 +21,16 @@ public class BankBookController {
 		int result = bankBookService.add(bankBookDTO);
 		return "redirect:./list";
 	}
-	
-	
 	//insert form 이동
 	@RequestMapping(value="add",method=RequestMethod.GET)
 	public void add() throws Exception{
 	}
-	
+	//delete
+	@RequestMapping("delete")
+	public String delete(BankBookDTO bankBookDTO) throws Exception{
+		int result = bankBookService.delete(bankBookDTO);
+		return "redirect:./list";
+	}
 	
 	// list
 	@RequestMapping(value = "list", method = RequestMethod.GET)

@@ -15,27 +15,15 @@ public class MemberTest extends MyJunitTest {
 	private MemberDAO memberDAO;
 	
 	@Test
-	public void check() {
-		assertNotNull(memberDAO);
+	public void mypageTest() throws Exception{
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId("id3");
+	memberDTO=memberDAO.mypage(memberDTO);
+	assertNotNull(memberDTO);
+		
 	}
-//	@Test
-//	public void listTest() throws Exception{
-//		List<MemberDTO> ar= memberDAO.list();
-//		assertNotEquals(0, ar.size());
-//	}
-//	@Test
-//	public void joinTest() throws Exception{
-//		MemberDTO memberDTO= new MemberDTO();
-//		memberDTO.setId("id");
-//		memberDTO.setPw("pw2");
-//		memberDTO.setName("name2");
-//		memberDTO.setPhone("010-6666-6666");
-//		memberDTO.setEmail("id2@naver.com");
-//		int result= memberDAO.join(memberDTO);
-//		assertEquals(1, result);
-//	}
 
-	@Test
+	//@Test
 	public void loginTest() throws Exception{
 		MemberDTO memberDTO= new MemberDTO();
 		memberDTO.setId("id2");

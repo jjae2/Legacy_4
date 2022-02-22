@@ -15,4 +15,7 @@ public class MemberService {
 	public MemberDTO login(MemberDTO memberDTO) throws Exception {
 		return memberDAO.login(memberDTO);
 	}
+	public MemberDTO mypage(MemberDTO memberDTO) throws Exception{
+		return memberDAO.mypage(memberDTO);
+	}
 }

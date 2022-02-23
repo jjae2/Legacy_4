@@ -15,6 +15,8 @@ public class BankBookController {
 
 	@Autowired
 	private BankBookService bankBookService;
+	
+	
 	//DB에 insert
 	@RequestMapping(value ="add",method=RequestMethod.POST)
 	public String add(BankBookDTO bankBookDTO) throws Exception{

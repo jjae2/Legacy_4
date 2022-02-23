@@ -17,7 +17,10 @@
 		INSERT INTO BANKBOOK(BOOKNUMBER,BOOKNAME,BOOKCONTENTS,BOOKRATE,BOOKSALE)
 		VALUES(BANKBOOK_SEQ.NEXTVAL,#{bookName},#{bookContents},#{bookRate},#{bookSale})
 	</insert>
-
+<update id="update" parameterType="BankBookDTO">
+UPDATE BANKBOOK SET BOOKNAME=#{bookName},BOOKCONTENTS=#{bookContents},BOOKSALE=#{bookSale},BOOKRATE=#{bookRate}
+WHERE BOOKNUMBER=#{bookNumber}
+</update>
 
 
 </mapper> 

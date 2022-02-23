@@ -10,6 +10,7 @@
 <h1>bankbook detail page</h1>
 <h3>Name:${dto.bookName}</h3>
 <h3>Contents:${dto.bookContents}</h3>
+<a href="./update?bookNumber=${dto.bookNumber}">Update</a>
 <a href="./delete?bookNumber=${dto.bookNumber}">Delete</a>
 <a href="./update">Update</a>
 <a href="./list">List</a>

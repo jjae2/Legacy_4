@@ -10,6 +10,11 @@ public class BankBookService {
 	@Autowired
 	private BankBookDAO bankBookDAO;
 	// 메서드는 dao와 거의 동일
+	//update
+	public int update(BankBookDTO bankBookDTO) throws Exception{
+		return bankBookDAO.update(bankBookDTO);
+	}
+	
 	// add(insert)
 	public int add(BankBookDTO bankBookDTO) throws Exception {
 		return bankBookDAO.add(bankBookDTO);
@@ -21,9 +26,9 @@ public class BankBookService {
 	// list
 	public List<BankBookDTO> list() throws Exception {
 		List<BankBookDTO> ar = bankBookDAO.list();
-
 		return ar;
 	}
+	//delete
 	public int delete(BankBookDTO bankbookDTO) throws Exception{
 		return bankBookDAO.delete(bankbookDTO);
 	}

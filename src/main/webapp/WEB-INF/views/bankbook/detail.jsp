@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <h1>bankbook detail page</h1>
 <h3>Name:${dto.bookName}</h3>
 <h3>Contents:${dto.bookContents}</h3>

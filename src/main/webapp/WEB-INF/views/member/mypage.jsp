@@ -13,5 +13,6 @@
 <h3>${dto.phone }</h3>
 <h3>${dto.email }</h3>
 
+<a href="./update?id=${dto.id}">수정하기</a>
 </body>
 </html>

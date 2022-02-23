@@ -13,7 +13,7 @@
 <h1>Notice List Page</h1>
 <table>
 <tr>
-<th>글 번호</th><th>작성자</th><th>조회 수</th>
+<th> 글 번호 </th><th> 작성자</th><th> 조회 수</th><th> 작성 날짜 </th>
 </tr>
 <c:forEach items="${list}" var="notice">
 <tr>
@@ -21,6 +21,7 @@
 
 <td>${notice.writer}</td>
 <td>${notice.hit }</td>
+<td>${notice.regDate}</td>
 </tr>
 </c:forEach>
 </table>

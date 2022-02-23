@@ -18,6 +18,19 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+		  
+	//update
+	@RequestMapping(value="update",method=RequestMethod.POST)
+	public String update(MemberDTO memberDTO) throws Exception{
+		int result = memberService.update(memberDTO);
+		return "redirect:./mypage";
+	}
+	
+	@RequestMapping(value="update",method=RequestMethod.GET)
+	public void update(MemberDTO memberDTO,Model model) throws Exception{
+	memberDTO=memberService.mypage(memberDTO);
+	model.addAttribute("dto",memberDTO);
+	}
 	
 	//mypage
 	@RequestMapping(value="mypage",method =RequestMethod.GET)

@@ -12,10 +12,13 @@
     <select id="login" parameterType="MemberDTO" resultType="MemberDTO">
     SELECT ID,NAME FROM MEMBER WHERE ID=#{id} AND PW=#{pw}
     </select>
-    
     <select id="mypage" parameterType="MemberDTO" resultType="MemberDTO">
     SELECT ID,NAME,PHONE,EMAIL FROM MEMBER
     WHERE ID=#{id}
     </select>
+    <update id="update" parameterType="MemberDTO">
+    UPDATE MEMBER SET PW=#{pw},PHONE=#{phone},EMAIL=#{email}
+    WHERE ID=#{id}
+    </update>
     
     </mapper>

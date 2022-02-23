@@ -12,5 +12,7 @@
 <h3>작성 날짜:${dto.regDate}</h3>
 <h3>글 내용:${dto.contents}</h3>
 
+<a href="./update?num=${dto.num}">글 수정</a>
+<a href="./delete?num=${dto.num}">글 삭제</a>
 </body>
 </html>

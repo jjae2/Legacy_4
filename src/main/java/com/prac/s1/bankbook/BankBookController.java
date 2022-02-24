@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.prac.s1.util.Pager;
 
 @Controller
 @RequestMapping(value = "/bankbook/*")
@@ -47,9 +50,10 @@ public class BankBookController {
 	
 	// list
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public ModelAndView list(ModelAndView mv) throws Exception {
-		List<BankBookDTO> ar = bankBookService.list();
+	public ModelAndView list(ModelAndView mv,Pager pager) throws Exception {
+		List<BankBookDTO> ar = bankBookService.list(pager);
 		mv.addObject("list", ar);
+		mv.addObject("pager",pager);
 		mv.setViewName("bankbook/list");
 		return mv;
 	}

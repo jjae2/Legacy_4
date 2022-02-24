@@ -5,23 +5,33 @@
 
 <mapper namespace="com.prac.s1.notice.NoticeDAO">
 	<select id="list" resultType="NoticeDTO">
-		SELECT * FROM NOTICE
+	SELECT * FROM
+		(SELECT ROWNUM R, N.* FROM
+		(SELECT * FROM NOTICE ORDER BY NUM DESC)N)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
+	
+	<select id="total" resultType="Long">
+	SELECT COUNT(NUM) FROM NOTICE
+	</select>
+	
 	<insert id="add" parameterType="NoticeDTO">
-		INSERT INTO NOTICE(NUM,TITLE,CONTENTS,WRITER,REGDATE,HIT)
+		INSERT INTO
+		NOTICE(NUM,TITLE,CONTENTS,WRITER,REGDATE,HIT)
 		VALUES(NOTICE_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,#{hit})
 	</insert>
 
-	<select id="detail" parameterType="NoticeDTO" resultType="NoticeDTO">
-	SELECT *FROM NOTICE WHERE NUM=#{num}
+	<select id="detail" parameterType="NoticeDTO"
+		resultType="NoticeDTO">
+		SELECT *FROM NOTICE WHERE NUM=#{num}
 	</select>
 	<delete id="delete" parameterType="NoticeDTO">
-	DELETE NOTICE WHERE NUM=#{num}
+		DELETE NOTICE WHERE NUM=#{num}
 	</delete>
-<update id="update" parameterType="NoticeDTO">
-UPDATE NOTICE SET TITLE=#{title},CONTENTS=#{contents}
-WHERE NUM=#{num}
-</update>
+	<update id="update" parameterType="NoticeDTO">
+		UPDATE NOTICE SET TITLE=#{title},CONTENTS=#{contents}
+		WHERE NUM=#{num}
+	</update>
 
 
 </mapper>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.prac.s1.bankbook.BankBookDTO;
+import com.prac.s1.util.Pager;
 
 @Controller
 @RequestMapping(value = "/notice/*")
@@ -36,9 +37,10 @@ public class NoticeController {
 		}
 	
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public ModelAndView list(ModelAndView mv) throws Exception {
-		List<NoticeDTO> ar = noticeService.list();
+	public ModelAndView list(ModelAndView mv,Pager pager) throws Exception {
+		List<NoticeDTO> ar = noticeService.list(pager);
 		mv.addObject("list", ar);
+		mv.addObject("pager",pager);
 		mv.setViewName("notice/list");
 		return mv;
 	}

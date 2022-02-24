@@ -15,17 +15,19 @@
 	
 <table class="ltb">
 <tr>
-<th class="lth">상품명</th><th class="lth">이자율</th><th class="lth">판매</th>
+<th class="lth">상품 번호</th><th class="lth">상품명</th><th class="lth">이자율</th><th class="lth">판매</th>
 </tr>
 <c:forEach items="${list}" var="book">
 <tr class="ltr">
-<td class="ltd ltd2"><a href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
+<td class="ltd ltd2">${book.bookNumber}</td>
+<td class="ltd"><a href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
 <td class="ltd">${book.bookRate}</td>
 <td class="ltd ">${book.bookSale}</td>
 </tr>
 </c:forEach>
 </table>
-<button><a href="./add">A D D</a></button>
+
+	<button><a href="./add">A D D</a></button>
 
 </body>
 </html>

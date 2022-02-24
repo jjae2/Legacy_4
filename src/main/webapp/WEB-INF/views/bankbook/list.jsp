@@ -12,19 +12,20 @@
 <body>
 <c:import url="../template/header.jsp"></c:import>
 	<h1>bankbook list page</h1>
-<table class="bbtb">
+	
+<table class="ltb">
 <tr>
-<th class="bbth">상품명</th><th class="bbth">이자율</th><th class="bbth">판매</th>
+<th class="lth">상품명</th><th class="lth">이자율</th><th class="lth">판매</th>
 </tr>
 <c:forEach items="${list}" var="book">
-<tr>
-<td class="bbtd"><a href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
-<td class="bbtd">${book.bookRate}</td>
-<td class="bbtd">${book.bookSale}</td>
+<tr class="ltr">
+<td class="ltd ltd2"><a href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
+<td class="ltd">${book.bookRate}</td>
+<td class="ltd ">${book.bookSale}</td>
 </tr>
 </c:forEach>
 </table>
-<a href="./add">ADD</a>
+<button><a href="./add">A D D</a></button>
 
 </body>
 </html>

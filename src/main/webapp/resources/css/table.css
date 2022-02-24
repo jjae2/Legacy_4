@@ -1,13 +1,37 @@
 @charset "UTF-8";
-
-  .bbtb {
+h1{
+	text-align: center;
+	padding: 75px;
+}
+  .ltb {
     width: 50%;
-    border: 1px solid #444444;
+    border: 1px solid black;
     margin: 0 auto;
+    border-collapse: collapse;
   }
-  .bbth {
-    border: 1px solid #444444;
+  .lth {
+    border: 1px solid black;
+    background: black;
+    color: white;
+    padding: 10px;
   }
-  . bbtd {
-  border: 1px solid #444444;
+  .ltd{
+  border: black solid 1px;
+  padding: 10px;
+  text-align: center;
   }
+  .ltd2{
+  background-color: gray;
+  }
+  .ltr{
+	border: black solid 1px;
+  }
+ button{
+ border:5px solid skyblue;
+ color:skyblue;
+ padding:5px;
+ border-radius: 5px;
+ margin-top:50px;
+ margin-left: 45%;
+ }
+

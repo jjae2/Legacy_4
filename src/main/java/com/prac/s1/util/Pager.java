@@ -66,22 +66,26 @@ public class Pager {
       this.startNum=(curBlock-1)*perBlock+1;
       this.lastNum=curBlock*perBlock;
       
-      //7.현재 블럭이 마지막 블럭번호와 같다면
-      if(curBlock ==totalBlock) {
-    	  this.lastNum=totalPage;
-      }
-      //8.이전,다음블럭유무
-      this.pre=false;
-      if(curBlock>1) {
-         //현재블록이 2,3,4. . . .
-         this.pre=true;
-      }
-      
-      this.next=false;
-      if(totalBlock > curBlock) {
-         this.next=true;
-      }
-   }
+		//7. 이전, 다음 블럭 유무
+		
+		this.pre=false;
+		if(curBlock>1) {
+			//현재 block이 2, 3, 4 ....
+			this.pre=true;
+		}
+		
+		this.next=false;
+		if(totalBlock > curBlock) {
+			this.next=true;
+		}
+		
+		//8. 현재 블럭이 마지막 블럭번호와 같다면
+		if(curBlock == totalBlock) {
+			this.lastNum=totalPage;
+		}
+		
+	}
+
 
    
    public Long getPerPage() {

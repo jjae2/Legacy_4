@@ -9,17 +9,17 @@
 </head>
 <body>
 <h1>Notice Detail Page</h1>
-<table class="dtb">
+<table >
 <tr>
-<th class="dth"> 작성자 </th><th class="dth"> 작성 날짜</th><th class="dth"> 글 내용</th>
+<th > 제목 </th><th> 글 내용</th><th > 작성자</th>
 <tr>
-<td class="dtd">${dto.writer}</td>
-<td class="dtd">${dto.regDate}</td>
-<td class="dtd">${dto.contents}</td>
+<td >${dto.title}</td>
+<td >${dto.contents}</td>
+<td >${dto.writer}</td>
 </tr>
 </table>
 
-<button></button><a href="./update?num=${dto.num}">글 수정</a></button>
+<button><a href="./update?num=${dto.num}">글 수정</a></button>
 <button><a href="./delete?num=${dto.num}">글 삭제</a></button>
 </body>
 </html>

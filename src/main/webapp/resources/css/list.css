@@ -1,7 +1,6 @@
 @charset "UTF-8";
 .table-container{
     width: 100%;
-   
 }
 .title{
     margin-top: 50px;
@@ -10,10 +9,14 @@
 }
 .search{
     margin-top: 50px;
-    margin: 50px auto 50px auto;
+    margin: 50px auto 0px auto;
     width: 70%;
 }
 div{
     width: 70%;
     margin: 0 auto;
+}
+fieldset{
+    height: 25px;
+    width: 284px;
 }

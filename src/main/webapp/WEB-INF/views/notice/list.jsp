@@ -39,8 +39,8 @@
 
 			<c:forEach items="${list}" var="notice">
 				<tr>
-					<td class="td2"><a href="./detail?num=${notice.num}">${notice.num}</a></td>
-					<td>${notice.title}</td>
+					<td class="td2"><a class="a1" href="./detail?num=${notice.num}">${notice.num}</a></td>
+					<td class="td2_1">${notice.title}</td>
 					<td>${notice.writer}</td>
 					<td>${notice.hit }</td>
 					<td>${notice.regDate}</td>
@@ -60,7 +60,7 @@
 			</c:if>
 		</div>
 
-		<div>
+		<div class="b1">
 			<a href="./add">ADD</a>
 		</div>
 	</div>

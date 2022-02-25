@@ -4,15 +4,44 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.prac.s1.notice.NoticeDAO">
-	<select id="list" resultType="NoticeDTO">
+	<select id="list" resultType="NoticeDTO" parameterType="Pager">
 	SELECT * FROM
 		(SELECT ROWNUM R, N.* FROM
-		(SELECT * FROM NOTICE ORDER BY NUM DESC)N)
+		(SELECT * FROM NOTICE 
+		WHERE NUM>0 
+		AND
+		<choose>
+		<when test="kind=='col1'">
+		TITLE
+		</when>
+		<when test="kind=='col2'">
+		CONTENTS
+		</when>
+		<otherwise>
+		WRITER
+		</otherwise>
+		</choose>
+		LIKE '%'||#{search}||'%'
+		 ORDER BY NUM DESC)N)
 		WHERE R BETWEEN #{startRow} AND #{lastRow}
 	</select>
 	
-	<select id="total" resultType="Long">
+	<select id="total" resultType="Long" parameterType="Pager">
 	SELECT COUNT(NUM) FROM NOTICE
+		WHERE NUM>0 
+		AND
+		<choose>
+		<when test="kind=='col1'">
+		TITLE
+		</when>
+		<when test="kind=='col2'">
+		CONTENTS
+		</when>
+		<otherwise>
+		WRITER
+		</otherwise>
+		</choose>
+		 LIKE '%'||#{search}||'%'
 	</select>
 	
 	<insert id="add" parameterType="NoticeDTO">

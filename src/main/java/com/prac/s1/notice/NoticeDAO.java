@@ -19,8 +19,8 @@ public class NoticeDAO {
 		return sqlSession.selectList(NAMESPACE+"list",pager);
 	}
 	//total
-	public Long total()throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"total");
+	public Long total(Pager pager)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"total",pager);
 	}
 	//insert
 	public int add(NoticeDTO noticeDTO) throws Exception{

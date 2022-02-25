@@ -1,30 +1,27 @@
 @charset "UTF-8";
-h1{
-	text-align: center;
-	padding: 75px;
-}
-  .ltb {
-    width: 50%;
-    border: 1px solid black;
-    margin: 0 auto;
+  .table-basic {
+    
+    width: 70%;
+    border: 1px solid #000000;
     border-collapse: collapse;
+    margin: 0 auto;
   }
-  .lth {
-    border: 1px solid black;
-    background: black;
+  .table-basic th{
+    border: 1px solid #000000;
+    background-color: #455a64;
     color: white;
     padding: 10px;
+    height: 40px;
   }
-  .ltd{
+  .table-basic td{
   border: black solid 1px;
   padding: 10px;
   text-align: center;
+  height: 40px;
   }
-  .ltd2{
-  background-color: gray;
+  .td2{
+  background-color: maroon;
   }
-  .ltr{
+  .table-basic tr{
 	border: black solid 1px;
   }
-
-

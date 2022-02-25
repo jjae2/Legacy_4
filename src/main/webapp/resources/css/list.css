@@ -1,1 +1,19 @@
 @charset "UTF-8";
+.table-container{
+    width: 100%;
+   
+}
+.title{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.search{
+    margin-top: 50px;
+    margin: 50px auto 50px auto;
+    width: 70%;
+}
+div{
+    width: 70%;
+    margin: 0 auto;
+}

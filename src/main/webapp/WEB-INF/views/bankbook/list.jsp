@@ -13,8 +13,8 @@
 </head>
 <body>
 	<c:import url="../template/header.jsp"></c:import>
-<div class="table-container">
-	<h1 class="title">bankbook list page</h1>
+	<div class="table-container">
+		<h1 class="title">bankbook list page</h1>
 		<!--검색창-->
 		<div class="search">
 			<form action="./list" method="get">
@@ -23,26 +23,24 @@
 						<option value="col1">상품이름</option>
 						<option value="col2">상품내용</option>
 						<option value="col3">작성자</option>
-					</select>
-				<input type="text" name="search" value="${pager.search}">
-				<button type="submit">검색</button> 
+					</select> <input type="text" name="search" value="${pager.search}">
+					<button type="submit">검색</button>
 				</fieldset>
 			</form>
 		</div>
 		<table class="table-basic">
 			<tr>
-				<th >상품 번호</th>
-				<th >상품명</th>
-				<th >이자율</th>
-				<th >판매</th>
+				<th>상품 번호</th>
+				<th>상품명</th>
+				<th>이자율</th>
+				<th>판매</th>
 			</tr>
 			<c:forEach items="${list}" var="book">
-				<tr >
+				<tr>
 					<td class=td2>${book.bookNumber}</td>
-					<td ><a
-						href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
-					<td >${book.bookRate}</td>
-					<td >${book.bookSale}</td>
+					<td><a href="./detail?bookNumber=${book.bookNumber}">${book.bookName}</a></td>
+					<td>${book.bookRate}</td>
+					<td>${book.bookSale}</td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -59,11 +57,11 @@
 			</c:if>
 		</div>
 
-<div>
-		<button>
-			<a href="./add">A D D</a>
-		</button>
-</div>
-
+		<div>
+			<button>
+				<a href="./add">A D D</a>
+			</button>
+		</div>
+	</div>
 </body>
 </html>

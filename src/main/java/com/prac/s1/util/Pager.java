@@ -9,7 +9,10 @@ public class Pager {
    private Long startRow;
    //끝번호
    private Long lastRow;
-   
+//---------------검색사용변수--------------
+   public String search;
+   public String kind;
+ 
 //---------------JSP사용변수--------------
    private Long startNum;
    private Long lastNum;
@@ -142,9 +145,21 @@ public class Pager {
    public void setPre(boolean pre) {
       this.pre = pre;
    }
-   
-   
-   
-   
-   
+   public String getSearch() {
+	   //검색어가 없으면 search=null
+	   if(this.search==null) {
+		   this.search="";
+	   }
+//	   this.search="%"+this.search+"%";
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
 }

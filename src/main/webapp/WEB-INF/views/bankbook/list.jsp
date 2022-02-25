@@ -20,8 +20,8 @@
 			<form action="./list" method="get">
 				<fieldset>
 					<select name="kind">
-						<option value="col1">제목</option>
-						<option value="col2">본문</option>
+						<option value="col1">상품이름</option>
+						<option value="col2">상품내용</option>
 						<option value="col3">작성자</option>
 					</select>
 				<input type="text" name="search" value="${pager.search}">

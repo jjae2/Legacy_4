@@ -10,33 +10,41 @@
 <h1>Member Join page</h1>
 
 	<div>
-    <form action="./join" method="post">
+    <form action="./join" method="post" id="frm">
     <fieldset>
     <legend>ID</legend>
-    <input type="text" name="id">
+    <input type="text" id= "id" name="id">
+    <div id="idResult"></div>
     </fieldset>
       <fieldset>
     <legend>Password</legend>
-    <input type="password" name="pw">
+    <input type="password" id="pw" name="pw" placeholder="8글자 이상 12글자이하">
+    <div id="pwResult"></div>
+    </fieldset>
+          <fieldset>
+    <legend>Password 확인</legend>
+    <input type="password" id="pw2" name="pw" placeholder="8글자 이상 12글자이하">
+    <div id="pwResult2"></div>
     </fieldset>
       <fieldset>
     <legend>Name</legend>
-    <input type="text" name="name">
+    <input type="text" name="name" id="name">
     </fieldset>
     <fieldset>
         <legend>Phone</legend>
-    <input type="text" name="phone">
+    <input type="text" name="phone" id="phone">
     </fieldset>
     <fieldset>
         <legend>E-mail</legend>
-    <input type="text" name="email">
+    <input type="text" name="email" id="email">
     </fieldset>
  
     <fieldset>
-    <button type="submit">JOIN</button>
+    <button type="button" id="btn">JOIN</button>
     </fieldset>
    
     </form>
    </div>
+   <script type="text/javascript" src=../resources/js/join2.js></script>
 </body>
 </html>

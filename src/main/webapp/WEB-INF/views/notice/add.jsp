@@ -10,12 +10,14 @@
 <h1>Notice Add Page</h1>
 
 <form action="./add" method="post">
-Title<input type="text" name="title">
-Contents<input type="text" name="contents">
-Writer<input type="text" name="writer">
-Hit<input type="number" name="hit">
+Title<input type="text" name="title" id="title">
+Contents<input type="text" name="contents" id="contents">
+Writer<input type="text" name="writer" id="writer">
+Hit<input type="number" name="hit" id="hit">
 <input type="submit" name="insert">
 <button type="submit">ADD</button>
 </form>
+
+<script src="../resource/js/add.js"></script>
 </body>
 </html>

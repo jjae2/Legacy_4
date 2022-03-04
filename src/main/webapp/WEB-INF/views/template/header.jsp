@@ -20,7 +20,7 @@
       </c:when>
        <c:otherwise>
       <li><a href="/s1/member/login">Login<span class="material-icons">login</span></a></li>
-      <li><a href="/s1/member/join">Join</a></li>
+      <li><a href="/s1/member/joinCheck">Join</a></li>
       </c:otherwise>
       </c:choose>
     </ul>

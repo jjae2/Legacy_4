@@ -1,8 +1,8 @@
-package com.prac.s1.notice;
+package com.prac.s1.board;
 
 import java.sql.Date;
 
-public class NoticeDTO {
+public class BoardDTO {
 	private Long num;
 	private String title;
 	private String contents;
@@ -45,5 +45,4 @@ public class NoticeDTO {
 	public void setHit(Long hit) {
 		this.hit = hit;
 	}
-	
 }

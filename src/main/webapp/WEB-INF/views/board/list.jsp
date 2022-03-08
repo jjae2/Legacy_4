@@ -63,9 +63,7 @@ ${dto.title}
 		</div>
 
 		<div>
-			<button>
 				<a href="./add">A D D</a>
-			</button>
 		</div>
 	</div>
 </body>

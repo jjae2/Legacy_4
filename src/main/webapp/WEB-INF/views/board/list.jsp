@@ -38,7 +38,7 @@
 <td ><a href="./detail?num=${dto.num}">
 <c:catch>
 <c:forEach begin="1" end="${dto.depth}">--</c:forEach>
-</c:catch >
+</c:catch > <!-- 예외처리 depth 있으면 하고 없으면 안하고 -->
 ${dto.title}
 </a>
 </td>

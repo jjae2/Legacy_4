@@ -14,6 +14,11 @@
 </head>
 <body>
 <c:import url="./template/header.jsp"></c:import>
+
+<div>
+<img alt="" src="./resources/images/son.jpg">
+</div>
+
 <h1>INDEX PAGE!!</h1><span class="material-icons-outlined">
 account_circle
 </span>
@@ -30,6 +35,6 @@ account_circle
 	<a href="./member/logout">Logout</a>
 	</c:if>
 </div>
-
+<img alt="" src="./resources/upload/member/6b5f356c-1a13-44e4-aa44-2f4b82115191_11.jpg">
 </body>
 </html>

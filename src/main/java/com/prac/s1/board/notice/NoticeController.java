@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.prac.s1.bankbook.BankBookDTO;
 import com.prac.s1.board.BoardDTO;
+import com.prac.s1.file.fileDTO;
+import com.prac.s1.member.MemberFileDTO;
 import com.prac.s1.util.Pager;
 
 @Controller
@@ -26,6 +28,21 @@ public class NoticeController {
 	public String board() {
 		return "notice";
 	}
+	
+	//filedown
+	   @RequestMapping(value="fileDown", method=RequestMethod.GET)
+	   public ModelAndView fileDown(NoticeFileDTO noticeFileDTO)throws Exception{
+	      ModelAndView mv = new ModelAndView();
+	      noticeFileDTO=noticeService.detailFile(noticeFileDTO);
+	      
+	      mv.setViewName("fileDown");
+	      mv.addObject("file", noticeFileDTO);
+	      
+	      return mv;
+	      
+	   }
+
+	
 	
 	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public ModelAndView list(ModelAndView mv,Pager pager) throws Exception {

@@ -20,6 +20,11 @@ public class QnaService implements BoardService {
 	@Autowired
 	private FileManager fileManager;
 
+	   public QnaFileDTO detailFile(QnaFileDTO qnaFileDTO) throws Exception {
+		      // TODO Auto-generated method stub
+		      return qnaDAO.detailFile(qnaFileDTO);
+		   }
+	
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {
 		// TODO Auto-generated method stub

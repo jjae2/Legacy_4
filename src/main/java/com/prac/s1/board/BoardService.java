@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.prac.s1.util.Pager;
 
 public interface BoardService {
+
 	//add
 	public int add(BoardDTO boardDTO,MultipartFile[] files)throws Exception;
    //list

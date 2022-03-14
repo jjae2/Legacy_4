@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.prac.s1.board.BoardDTO;
 import com.prac.s1.board.BoardService;
+import com.prac.s1.file.fileDTO;
 import com.prac.s1.util.FileManager;
 import com.prac.s1.util.Pager;
 
@@ -18,6 +19,12 @@ public class NoticeService implements BoardService {
 	private NoticeDAO noticeDAO;
 	@Autowired 
 	private FileManager fileManager;
+
+	
+	   public NoticeFileDTO detailFile(NoticeFileDTO noticeFileDTO) throws Exception {
+		      // TODO Auto-generated method stub
+		      return noticeDAO.detailFile(noticeFileDTO);
+		   }
 
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {

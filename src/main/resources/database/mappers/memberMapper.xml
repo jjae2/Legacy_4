@@ -5,6 +5,11 @@
 
 <mapper namespace="com.prac.s1.member.MemberDAO">
 
+<select id="detailFile" resultType="MemberFileDTO" parameterType="MemberFileDTO">
+SELECT * FROM MEMBERFILE
+WHERE FILENUM=#{fileNum}
+</select>
+
 <insert id="addFile" parameterType="MemberFileDTO">
 	INSERT INTO MEMBERFILE(FILENUM,ID,FILENAME,ORINAME)
 	VALUES(FILE_SEQ.NEXTVAL,#{id},#{fileName},#{oriName})

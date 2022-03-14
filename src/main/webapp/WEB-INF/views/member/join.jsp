@@ -24,7 +24,7 @@
 			</fieldset>
 			<fieldset>
 				<legend>Password 확인</legend>
-				<input type="password" id="pw2" name="pw"
+				<input type="password" id="pw2" name="pw2" 
 					placeholder="8글자 이상 12글자이하">
 				<div id="pwResult2"></div>
 			</fieldset>
@@ -51,6 +51,6 @@
 
 		</form>
 	</div>
-	<script type="text/javascript" src=../resources/js/join2.js></script>
+	 <script type="text/javascript" src=../resources/js/join2.js></script> 
 </body>
 </html>

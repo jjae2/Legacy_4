@@ -12,19 +12,20 @@ const name= document.getElementById('name');
 const phone= document.getElementById('phone');
 const email= document.getElementById('email');
 
-let idcheck=false;
-let pwcheck=false;
+let idcheck=false;    //전역변수
+let pwcheck=false;   
+
 let namecheck=false;
 let phonecheck=false;
 let emailcheck=false;
 
 pw.addEventListener("change",function(){
+
     pwcheck=false;
     pw2.value='';
     pwResult2.innerHTML='';
     pw2.focus();
 })
-
 name.addEventListener('blur',function(){
 
     if(name.value==''){
@@ -53,48 +54,49 @@ email.addEventListener('blur',function(){
 
 
 
-btn.addEventListener("click",function(){
-    if(idcheck && pwcheck && namecheck &&phonecheck && emailcheck){
-    frm.submit();
-}else{
-    alert("필수 요건을 확인")
-}
-});
+pw.addEventListener("keyup",function(){
+    let length=pw.value.length;
+    let message="잘못된 비밀번호입니다 ";
 
+    if(length>=8 && length<=12){
+        message="올바른 비밀번호입니다 ";
+    }
+
+    pwResult.innerHTML=message;
+    
+})
+pw2.addEventListener("blur",function(){
+   
+    let message="비밀번호가 일치하지 않습니다"
+
+    if(pw.value==pw2.value){
+        message="비밀번호가 일치합니다"
+        pwcheck=true;
+    }else{
+         pwcheck=false;
+    }
+    pwResult2.innerHTML=message;
+
+
+})
 id.addEventListener("blur",function(){
    
-    let v = id.value;
+    let v=id.value;
 
-    if(v.length==0 ){//v==''
-     idResult.innerHTML='아이디를 입력해주세요.';
-     idcheck=false; 
+    if(v==''){
+        idResult.innerHTML= 'id 필수';
+        idcheck= false;
     }else{
-        idResult.innerHTML='';
         idcheck=true;
     }
 })
-pw.addEventListener("keyup",function(){
-   
-    let length=pw.value.length;
-    let message='잘못된 비번입니다';
-    if(length>=8 && length<=12){
-        message='올바른 비번입니다';
-     
-    }
-    pwResult.innerHTML=message;
-})
-pw2.addEventListener("blur",function(){
-    let v1= pw.value;
-    let v2= pw2.value;
-    let message = "비번이 일치 하지 않습니다";
+btn.addEventListener("click", function(){
 
-    if(v1==v2){
-        message="비번이 일치 합니다";
-        pwcheck=true;
+    if(idcheck&&pwcheck&&namecheck&&phonecheck&&emailcheck){
+        frm.submit();
     }else{
-        pwcheck=false;
+        alert('필수요건을 확인하세요')
     }
-    pwResult2.innerHTML=message;
 })
 
 

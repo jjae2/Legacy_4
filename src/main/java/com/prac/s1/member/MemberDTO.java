@@ -1,6 +1,7 @@
 package com.prac.s1.member;
 
 public class MemberDTO {
+	
 	private String id;
 	private String pw;
 	private String name;
@@ -14,18 +15,19 @@ public class MemberDTO {
 	public void setMemberFileDTO(MemberFileDTO memberFileDTO) {
 		this.memberFileDTO = memberFileDTO;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getPw() {
 		return pw;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -44,4 +46,8 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	
+	
+
 }

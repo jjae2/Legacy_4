@@ -4,6 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.prac.s1.board.notice.NoticeDAO">
     
+    <select id="listFile" parameterType="BoardDTO" resultType="NoticeFileDTO">
+    SELECT * FROM NOTICEFILE
+    WHERE NUM= #{num}
+    </select>
+    
     
     <select id="detailFile" resultType="NoticeFileDTO" parameterType="NoticeFileDTO">
 	SELECT * FROM NOTICEFILE

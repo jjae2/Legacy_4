@@ -90,8 +90,10 @@ public class NoticeController {
 	}
 		
 	@RequestMapping("delete")
-	public String delete(NoticeDTO noticeDTO) throws Exception{
+	public ModelAndView delete(NoticeDTO noticeDTO) throws Exception{
 		int result = noticeService.delete(noticeDTO);
-			return "redirect:./list";
+		ModelAndView mv =new ModelAndView();
+		mv.setViewName("redirect:./list");
+			return mv;
 		}
 }

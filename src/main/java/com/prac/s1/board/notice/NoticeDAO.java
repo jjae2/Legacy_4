@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import com.prac.s1.board.BoardDAO;
 import com.prac.s1.board.BoardDTO;
 import com.prac.s1.board.BoardFileDTO;
-import com.prac.s1.file.fileDTO;
 import com.prac.s1.util.Pager;
 
 @Repository

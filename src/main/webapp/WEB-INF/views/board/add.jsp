@@ -13,7 +13,7 @@
 
 Title<input type="text" name="title">
 Contents<input type="text" name="contents">
-Writer<input type="text" name="writer">
+Writer<input type="text" name="writer" value="${member.id}" readonly>
 
 <div>
 <input type="file" name="files">

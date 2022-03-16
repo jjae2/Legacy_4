@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +11,9 @@
 <link href="../resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-<c:import url="../template/header.jsp"></c:import>
+	<c:import url="../template/header.jsp"></c:import>
 	<div class="table-container">
-		<h1>${board} List Page</h1>
+		<h1>${board}List Page</h1>
 		<!--검색창-->
 		<div class="search">
 			<form action="./list" method="get">
@@ -28,27 +28,29 @@
 			</form>
 		</div>
 
-<table class="table-basic" >
-<tr >
-<th > 글 번호 </th><th > 글 제목</th><th > 글 내용</th><th > 작성자 </th><th > 작성날짜 </th><th > 조회 수 </th>
-</tr>
-<c:forEach items="${list}" var="dto">
-<tr>
-<td>${dto.num}</td>
-<td ><a href="./detail?num=${dto.num}">
-<c:catch>
-<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
-</c:catch > <!-- 예외처리 depth 있으면 하고 없으면 안하고 -->
-${dto.title}
-</a>
-</td>
-<td >${dto.contents}</td>
-<td >${dto.writer}</td>
-<td >${dto.regDate}</td>
-<td >${dto.hit}</td>
-</tr>
-</c:forEach>
-</table>
+		<table class="table-basic">
+			<tr>
+				<th>글 번호</th>
+				<th>글 제목</th>
+				<th>글 내용</th>
+				<th>작성자</th>
+				<th>작성날짜</th>
+				<th>조회 수</th>
+			</tr>
+			<c:forEach items="${list}" var="dto">
+				<tr>
+					<td>${dto.num}</td>
+					<td><a href="./detail?num=${dto.num}"> <c:catch>
+								<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+							</c:catch> <!-- 예외처리 depth 있으면 하고 없으면 안하고 --> ${dto.title}
+					</a></td>
+					<td>${dto.contents}</td>
+					<td>${dto.writer}</td>
+					<td>${dto.regDate}</td>
+					<td>${dto.hit}</td>
+				</tr>
+			</c:forEach>
+		</table>
 
 		<div>
 			<c:if test="${pager.pre}">
@@ -61,10 +63,12 @@ ${dto.title}
 				<a href="./list?page=${pager.lastNum+1}">NEXT</a>
 			</c:if>
 		</div>
-
 		<div>
+			<c:if test="${not empty member}">
 				<a href="./add">A D D</a>
+			</c:if>
 		</div>
 	</div>
+
 </body>
 </html>

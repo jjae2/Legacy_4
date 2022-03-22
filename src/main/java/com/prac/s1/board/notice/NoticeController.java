@@ -23,29 +23,24 @@ public class NoticeController {
 
 	@Autowired
 	private NoticeService noticeService;
-	
+
 	@ModelAttribute("board")
 	public String board() {
 		return "notice";
 	}
-	
-	//filedown
-	   @RequestMapping(value="fileDown", method=RequestMethod.GET)
-	   public ModelAndView fileDown(NoticeFileDTO noticeFileDTO)throws Exception{
-	      ModelAndView mv = new ModelAndView();
-	      noticeFileDTO=noticeService.detailFile(noticeFileDTO);
-	      
-	      mv.setViewName("fileDown");
-	      mv.addObject("file", noticeFileDTO);
-	      
-	      return mv;
-	      
-	   }
 
-	
-	
+	// filedown
+	@RequestMapping(value = "fileDown", method = RequestMethod.GET)
+	public ModelAndView fileDown(NoticeFileDTO noticeFileDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		noticeFileDTO = noticeService.detailFile(noticeFileDTO);
+		mv.setViewName("fileDown");
+		mv.addObject("file", noticeFileDTO);
+		return mv;
+	}
+
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public ModelAndView list(ModelAndView mv,Pager pager) throws Exception {
+	public ModelAndView list(ModelAndView mv, Pager pager) throws Exception {
 		List<BoardDTO> ar = noticeService.list(pager);
 		mv.addObject("list", ar);
 		mv.setViewName("board/list");
@@ -61,39 +56,40 @@ public class NoticeController {
 
 	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView add() throws Exception {
-		ModelAndView mv= new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("board/add");
 		return mv;
-		
+
 	}
 
 	@RequestMapping(value = "add", method = RequestMethod.POST)
-	public ModelAndView add(NoticeDTO noticeDTO,MultipartFile[] files) throws Exception {
-		ModelAndView mv= new ModelAndView();
-		int result = noticeService.add(noticeDTO,files);
+	public ModelAndView add(NoticeDTO noticeDTO, MultipartFile[] files) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.add(noticeDTO, files);
 		mv.setViewName("redirect:./list");
 		return mv;
 	}
-	@RequestMapping(value="update",method=RequestMethod.GET)
-	public String update(NoticeDTO noticeDTO,Model model)throws Exception{
+
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public String update(NoticeDTO noticeDTO, Model model) throws Exception {
 		BoardDTO boardDTO = noticeService.detail(noticeDTO);
-		model.addAttribute("dto",boardDTO);
+		model.addAttribute("dto", boardDTO);
 		return "board/update";
 	}
-	
-	@RequestMapping(value="update",method=RequestMethod.POST)
-	public ModelAndView update(NoticeDTO noticeDTO)throws Exception{
-		ModelAndView mv= new ModelAndView();
-		int result =noticeService.update(noticeDTO);
+
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public ModelAndView update(NoticeDTO noticeDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.update(noticeDTO);
 		mv.setViewName("redirect:./list");
 		return mv;
 	}
-		
+
 	@RequestMapping("delete")
-	public ModelAndView delete(NoticeDTO noticeDTO) throws Exception{
+	public ModelAndView delete(NoticeDTO noticeDTO) throws Exception {
 		int result = noticeService.delete(noticeDTO);
-		ModelAndView mv =new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("redirect:./list");
-			return mv;
-		}
+		return mv;
+	}
 }
